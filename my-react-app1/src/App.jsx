@@ -1,60 +1,54 @@
-function Com() {
-  return <><h1>React</h1></>
-}
 
 function App() {
-
-  //建立陣列(可以是任何形式的資料=元件)
-  //同一陣列中,key屬性的值不可重複
-  const listItem = [
-    <Com key="0" />,
-    <Com key="1" />,
-    <Com key="2" />,
-  ]
-  const listBook = [
-    { bookName: 'Html', id: 'book1' },
-    { bookName: 'Css', id: 'book2' },
-    { bookName: 'Java', id: 'book3' },
-  ]
-  /* 使用filter握濾出陣列中，除了css的書本 */
-  const filterBook = listBook.filter((book) => {
-    if (book.bookName != 'Css') {
-      return true
+  /* 建立物件中有多筆變數 */
+  const person = {
+    s1: {
+      name: "同學1",
+      age: 10
+    },/* 需要用,隔開 */
+    s2: {
+      name: "同學2",
+      age: 11
+    },
+    s3: {
+      name: "同學3",
+      age: 12
     }
-  })
+  }
+  /* 多筆資料物件的解構方法一*/
+  // const { s1, s2, s3 } = person;
+  /* 多筆資料的物件解構方法二：解構+展開  使用 ... （其餘運算子）*/
+  //解構s1,展開s2,s3
+  const { s1, ...other } = person
+  // s1有成功被解構 其他的s2 , s3 會被放入other中，需要使用的時候就必須要用other.s2.name <<<比平常多一個other
 
-  //三元運算子的判斷式(是用單層判斷)
-  //判斷式？條件成立：條件不成立
-  const filterBook1 = listBook.filter((book) => {
-    return book.bookName !== 'Css' ? true : false
+  function showName(){
+    return 
+  }
 
-  })
+
+
+
+
 
   return (
     <>
-      {/* 使用陣列方法1 */}
-      {listItem}
+    {/* 方法一傳統的輸出方式 */}
+      {/*  <div>第一位同學姓名:{s1.name}</div>
+      <div>第一位同學年紀:{s1.age}</div>
       <hr />
-      {/* 使用陣列方法2 => map() >>>此方法可以把一個陣列轉換成另外一個陣列 */}
-      {
-        listBook.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })
-      }
+      <div>第二位同學姓名:{s2.name}</div>
+      <div>第二位同學年紀:{s2.age}</div>
       <hr />
+      <div>第三位同學姓名:{s3.name}</div>
+      <div>第三位同學年紀:{s3.age}</div> */}
 
-      {/* 顯示filter()過濾後的陣列資料 */}
-      {
-        filterBook.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })
-      }
-      <hr />
-      {
-        filterBook1.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })
-      }
+      <div>{`同學一姓名：${s1.name}`}</div>
+      <div>{`同學二姓名：${other.s2.name}`}</div>
+      <div>{`同學三姓名：${other.s3.name}`}</div>
+
+
+
     </>
   )
 }
