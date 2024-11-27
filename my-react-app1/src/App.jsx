@@ -1,25 +1,42 @@
-import { useState } from "react"
+import { useEffect } from "react"
 
 function App() {
+  //使用useEffect並用監聽函式
 
-  const [name, setName] = useState('王小明');
+  useEffect(() => {
+    const p1 = document.getElementById('p1')
+    p1.addEventListener('mouseover', () => {
+      p1.style.color = "red"
+      p1.style.fontWeight = 'bold'
+    })
+    p1.addEventListener('mouseout', () => {
+      p1.style.color = ""
+      p1.style.fontWeight = ''
+    })
+    const p2 = document.getElementById('p2')
+    p2.addEventListener('mouseover', () => {
+      p2.textContent = '我變了'
+    })
+    p2.addEventListener('mouseout', () => {
+      p2.textContent = '變內容'
+    })
 
-  function changeName(e) {
-    setName(e.target.value)
-  }
+    h1.addEventListener('click',(e)=>{
+      e.target.textContent='click事件被觸發了'
+      e.target.style.color='red'
+    })
+
+  })
+
   return (
     <>
-      <h1>設計輸入一個名字的欄位，並且即時顯示出來</h1>
+      <h1 id="h1">滑鼠事件</h1>
       <hr />
-      <h3>目前文字方塊的內容：{name}</h3>
-      請輸入姓名：<input type="text" value={name} onChange={(e) => {
-        setName(e.target.value);
-      }} />
-      <br />
-      請輸入姓名2:<input type="text" value={name} onChange={changeName} />
-
-      {/* <button>清空文字方塊內容</button> */}
+      <p id="p1" >變色</p>
+      <p id="p2" >變內容</p>
     </>
+
   )
 }
+
 export default App
