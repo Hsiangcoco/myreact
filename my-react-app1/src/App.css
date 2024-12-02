@@ -4,33 +4,22 @@
     box-sizing: border-box;
 }
 
-#Card{
+#Weather {
+    border: 1px solid red;
+}
+
+.card{
+    border: 1px solid #ccc;
+}
+.city {
+
+
+}
+
+.dataWeather{
     display: flex;
-}
-#card2,#card1 {
 
-    border: 1px solid #000;
-    border-radius: 10px;
-    margin: 10px;
 }
-
-#city {
-    display: block;
-    border-bottom: 1px solid #000;
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    background-color: antiquewhite;
-}
-
-#dataWeather {
-    display: flex;
-    justify-content: center;
-}
-
-#dataWeather1,
-#dataWeather2,
-#dataWeather3 {
-    text-align: center;
-    font-size: 24px;
-    margin: 10px;
+.row {
+    
 }
