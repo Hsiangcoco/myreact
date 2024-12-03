@@ -8,9 +8,8 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const data = await axios.get('https://raw.githubusercontent.com/Hsiangcoco/myreact/refs/heads/main/my-react-app1/src/F-C0032-001.json');
-      const { location } = data.data.cwaopendata.dataset;
-      console.log(location)
+      const data = await axios.get('https://hsiangcoco.github.io/myreact/json/F-C0032-001.json');
+      console.log(data)
 
     })
   }, [])
