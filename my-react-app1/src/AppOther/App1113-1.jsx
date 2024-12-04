@@ -1,7 +1,7 @@
 
 import "./App.css";
-import ShowContent from './ShowContent.jsx'
-import ShowClass from "./ShowClass.jsx";
+import ShowContent from './ShowContent.js'
+import ShowClass from "./ShowClass.js";
 
 /* function ShowContent() {
   const contentData = [
