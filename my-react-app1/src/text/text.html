@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../text/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1>非前端框架下的 jQuery 使用 </h1>
+    <hr>
+    <div>
+        <p class="title1">Lorem ipsum dolor sit amet.</p>
+        <p class="title2">click1</p>
+        <p class="title3">click2</p>
+        <button id="hide">隱藏</button>
+        <button id="show">顯示</button>
+        <button id="toggle">點我雙向變化</button>
+    </div>
+
+    <script>
+        $(function () {
+            $('.title2').click(function () {
+                $('.title1').hide(300)
+            })
+            $('.title3').click(function () {
+                $('.title1').show()
+            })
+            $('p').click(function () {
+                $(this).hide()
+            })
+            $('#hide').click(function () {
+                $('.title1').hide(300)
+            })
+            $('#show').click(function () {
+                $('.title1').show(300)
+            })
+            $('#toggle').click(function () {
+                $('.title1').toggle(300)
+            })
+        })
+
+        $(function () {
+            $('.title2').click(function () {
+                $('.title1').hide(300)
+            })
+            $('.title3').click(function () {
+                $('.title1').show()
+            })
+            $('p').click(function () {
+                $(this).hide()
+            })
+            $('#hide').click(function () {
+                $('.title1').hide(300)
+            })
+            $('#show').click(function () {
+                $('.title1').show(300)
+            })
+            $('#toggle').click(function () {
+                $('.title1').toggle(300)
+            })
+        })
+
+    </script>
+    <hr>
+
+    <button id="btn1">展開</button>
+    <button id="btn2">折疊</button>
+    <button id="btn3">雙向</button>
+
+    <div id="pane1" style="display: none; background-color: aqua; height: 100px; width: 100%;">
+        我是展開的面板
+    </div>
+
+    <script>
+        $(function () {
+            $('#btn1').click(() => {
+                $('#pane1').slideDown(500)
+            })
+            $('#btn2').click(() => {
+                $('#pane1').slideUp(500)
+            })
+            $('#btn3').click(() => {
+                $('#pane1').slideToggle(500)
+            })
+        })
+    </script>
+
+    <hr>
+    <div>
+        <h2>最新消息</h2>
+        <button id="open">點我看消息</button>
+    </div>
+    <div id="title-news">
+        <h3 class="h3a" style="display: none;">News1</h3>
+        <p class="h31" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, illo!
+        </p>
+        <h3 class="h3b" style="display: none;">News2</h3>
+        <p class="h32" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, illo!
+        </p>
+        <h3 class="h3c" style="display: none;">News3</h3>
+        <p class="h33" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, illo!
+        </p>
+    </div>
+
+    <script>
+        $(function () {
+            $('#open').click(function () {
+                $('.h3a').slideToggle(300)
+                $('.h3b').slideToggle(300)
+                $('.h3c').slideToggle(300)
+            })
+            $('.h3a').click(function () {
+                $('.h31').slideToggle(300)
+            })
+            $('.h3b').click(function () {
+                $('.h32').slideToggle(300)
+            })
+            $('.h3c').click(function () {
+                $('.h33').slideToggle(300)
+            })
+        })
+
+    </script>
+
+    <hr>
+    <button id="up">上</button>
+    <button id="zoom">縮放</button>
+    <button id="zoom2">雙向</button>
+    <button id="zoom3">變色</button>
+
+
+    <div class="box">
+    </div>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+            margin: 150px;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('#up').click(function () {
+                $('.box').animate({ top: '-100px' })
+            })
+            $('#zoom').click(function () {
+                $('.box').animate({ width: '400px', height: '400px' })
+            })
+            $('#zoom1').click(function () {
+                $('.box').animate({ width: '100px', height: '100px' })
+            })
+            $('#zoom2').click(function () {
+                $('.box').animate({ width: 'toggle' })
+            })
+            $('#zoom3').click(function(){
+                $('.box').css("background-color","yellow")
+            })
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
