@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 600px;
+            height: 450px;
+        }
+
+        .box {
+            width: 600px;
+            height: 450px;
+            position: relative;
+        }
+
+        /* 輪播導覽列 */
+        #nav {
+            position: absolute;
+            bottom: 5px;
+            right: 1px;
+
+            z-index: 10;
+
+        }
+
+        #nav a {
+            color: #fff;
+            margin-right: 10px;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #nav a.activeSlide {
+            background-color: red;
+        }
+
+        /* 遮色區 */
+        .mask {
+            background-color: rgba(44, 41, 41, 0.297);
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 40px;
+            z-index: 9;
+        }
+    </style>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="/my-react-app1/js/jquery.cycle.all.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div id="imgCycle">
+            <img src="/my-react-app1/public/images/01.jpg" alt="">
+            <img src="/my-react-app1/public/images/02.jpg" alt="">
+            <img src="/my-react-app1/public/images/03.jpg" alt="">
+            <img src="/my-react-app1/public/images/04.jpg" alt="">
+            <img src="/my-react-app1/public/images/05.jpg" alt="">
+        </div>
+        <div class="mask"></div>
+    </div>
+
+    <script>
+        //換圖輪播套件
+        $(function () {
+            $('#imgCycle').after('<div id="nav"></div>').cycle({
+                fx: 'fade', //輪播方式
+                sync: false, //有無前一張殘影
+                delay: -2000, //輪播速度
+                pager: '#nav'
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        #title img {
+            height: 300px;
+            width: 450px;
+            margin-right: 10px;
+            vertical-align: top; /* 垂直排列 讓圖片下面預設的空白不見 */
+        }
+    </style>
+    <script src="/my-react-app1/js/jquery-1.11.3.min.js"></script>
+    <script src="/my-react-app1/js/jquery.jcarousellite.min.js"></script>
+
+</head>
+
+<body>
+    <div id="title">
+        <ul>
+            <li><img src="/my-react-app1/public/images/01.jpg" alt=""></li>
+            <li><img src="/my-react-app1/public/images/02.jpg" alt=""></li>
+            <li><img src="/my-react-app1/public/images/03.jpg" alt=""></li>
+            <li><img src="/my-react-app1/public/images/04.jpg" alt=""></li>
+            <li><img src="/my-react-app1/public/images/05.jpg" alt=""></li>
+        </ul>
+
+    </div>
+
+
+    <script>
+        $(function () {
+            $('#title').jCarouselLite({
+                auto: 2000,//多久輪播一次
+                speed: 1000, //輪播速度
+                scroll: 1, //每次輪播張數 預設為一
+                visible: 2, //每次可看見的圖片數量
+            })
+
+        })
+
+    </script>
+
+</body>
+
+</html>
