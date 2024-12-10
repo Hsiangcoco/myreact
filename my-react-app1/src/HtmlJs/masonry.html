@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../js/jquery-1.11.3.min.js"></script>
+    <script src="../../js/masonry.pkgd.min.js"></script>
+    <script src="../../js/imagesloaded.pkgd.min.js"></script>
+    <style>
+        #container {
+            margin: auto;
+        }
+
+        .box {
+            width: 300px;
+        }
+
+        .box img {
+            width: 100%;
+            vertical-align: top;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">
+            <img src="../../public/images/01.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="../../public/images/06.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="../../public/images/03.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="../../public/images/04.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="../../public/images/05.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('#container').imagesLoaded(function () {
+                $('#container').masonry({
+                    isFitWidth: true
+                })
+                //左右留白，頁面置中
+                //搭配最外層的container
+                //margin:auto
+
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
