@@ -8,7 +8,6 @@ function Navbar() {
                 <li><Link to='/about'>關於我</Link></li>
                 <li><Link to='/news'>最新消息</Link></li>
             </ul>
-
         </div>
     )
 
